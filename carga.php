@@ -5,13 +5,13 @@
 	$titulo = $_POST['titulo_tema'];
 	$desc = $_POST['descripcion'];
 	$textVal = '';
-	
+
 	$nomb = $_FILES['banner']['name'];
 	$tempo =  $_FILES['banner']['tmp_name'];
 	$dir = 'banners/' . $nomb;
-	
+
 	foreach($_POST['cont'] as $texto){
-		$textVal .= $texto . "\n\n";
+		$textVal .= '<p class="texto-siz">' . $texto . '</p>' . '\n\n';
 	}
 	$consulta = $conexion->prepare("INSERT INTO integrales(titulo, contenido, banner, descripcion)
 		VALUES('$titulo', '$textVal', '$nomb', '$desc');");
@@ -21,8 +21,8 @@
 		else {
 		move_uploaded_file($tempo, $dir);
 		$consulta->execute();
-		header('location:temas_integrales.php');
+		header('location:index.php');
 	}
-	
-	
+
+
 ?>
