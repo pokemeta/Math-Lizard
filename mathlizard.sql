@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-03-2020 a las 15:36:22
+-- Tiempo de generación: 21-03-2020 a las 01:05:45
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.3.1
 
@@ -60,17 +60,7 @@ CREATE TABLE IF NOT EXISTS `integrales` (
   `banner` text NOT NULL,
   `descripcion` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `integrales`
---
-
-INSERT INTO `integrales` (`id`, `titulo`, `contenido`, `banner`, `descripcion`) VALUES
-(1, 'w34trwdfgdsgvsf', '<p class=\"texto-siz\">gfbnfvgytdtrdrszedcdzersferd</p><br><br><img src=\"banners/ecu1.gif\" width=\"300\" height=\"500\">', 'ecu2.jpg', 'ghbnfyujyugy7uv7jgvygj'),
-(3, 'Prueba', '<p class=\"texto-siz\">Dinero</p>\r\n\r\n<h3>PRUEBA 2</h3><hr>\r\n\r\n<p class=\"texto-siz\">el mundo se consume en dinero</p>\r\n\r\n', '42614996-informaciÃ³n-icono-del-arte-lÃ­nea-de-informaciÃ³n-de-aplicaciones-y-sitios-web.jpg', 'nose'),
-(4, 'Integral \\(u^n\\)', '<p class=\"texto-siz\">Aqui comienza tu camino de las integrales, si sabes derivar entonces no tendras problemas, esta es la formula base:</p>\r\n\r\n<p class=\"oper\">\\(\\int u^n du\\) = \\(u^{n + 1} \\over n + 1\\)</p>\r\n\r\n<p class=\"texto-siz\">Y con esta formula tan sencilla, puedes integrar, mas adelante en mas ejercicios complejos te daras cuenta de que esta formula se repite.</p>\r\n\r\n', '', 'la madre de todos los ejercicios'),
-(5, 'esto es un titulo para recordar', '<p class=\"texto-siz\">Este es un texto de eventos que no tengo idea a que se refieren</p>\n\n', '4358.jpg', 'hace mucho que no toco este programa asi que decido poner aqui');
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
