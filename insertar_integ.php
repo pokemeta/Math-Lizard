@@ -23,7 +23,7 @@
 				<h2>titulo: </h2><input type="text" name="titulo_tema"><br><br><br>
 				<input type="file" name="banner"><br><br><br>
 				<h2>descripcion: </h2><textarea name="descripcion" class="tema_texto"></textarea><br><br>
-				<h2>contenido: </h2><textarea id="prueba" name="cont[]" class="tema_texto"><p class="texto-siz"></p></textarea><br><br>
+				<h2>contenido: </h2><textarea id="prueba" name="cont[]" class="tema_texto"></textarea><br><br>
 
 				<center><input type="submit" name="subir_tema" value="enviar" class="btn-tema"></center><br>
 				<center><input type="button" id="btn3" onclick="addfield()" name="tema" value="insertar parrafo" class="btn-tema"></center><br>

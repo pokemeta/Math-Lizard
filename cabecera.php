@@ -1,4 +1,5 @@
 <header>
+	<meta charset="UTF-8"/>
 	<div class="logo">Math Lizard</div>
 	<div class="active"></div>
 		<nav>

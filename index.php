@@ -17,11 +17,13 @@
 		<?php require('titulo.php'); ?>
 	</head>
 	<body>
+		<meta charset="UTF-8"/>
 	<?php require('cabecera.php'); ?>
     <div class="container-temas">
-	
+
 	<?php while($titulo = $stmt->fetch()): ?>
 	<div class="tema">
+		<meta charset="UTF-8"/>
 		<img src="banners/<?php echo $titulo['banner']; ?>" class="thumbnail">
 		<h1 class="titulo-tema"><?php echo $titulo['titulo']; ?></h1>
 		<hr>
@@ -29,7 +31,7 @@
 		<div class="boton-tema"><a href="contenido.php?<?php echo 'id=' . $titulo['id']; ?>">Entrar</a></div>
 	</div>
 	<?php endwhile; ?>
-	
+
 	<?php if(!empty($_SESSION['usuario'])): ?>
 		<?php if($rs['rol'] == "admin"): ?>
 		<div class="icon-plus">
