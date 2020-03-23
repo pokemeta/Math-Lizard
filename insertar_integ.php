@@ -7,7 +7,7 @@
 	$adrol->execute(array(':nom' => $_SESSION['usuario']));
 	$res = $adrol->fetch();
 	if($res['rol'] == 'normal' or empty($_SESSION['usuario'])){
-		header("location:temas_integrales.php");
+		header("location:index.php");
 	}
 	else{}
 ?>
@@ -24,7 +24,7 @@
 				<input type="file" name="banner"><br><br><br>
 				<h2>descripcion: </h2><textarea name="descripcion" class="tema_texto"></textarea><br><br>
 				<h2>contenido: </h2><textarea id="prueba" name="cont[]" class="tema_texto"><p class="texto-siz"></p></textarea><br><br>
-				
+
 				<center><input type="submit" name="subir_tema" value="enviar" class="btn-tema"></center><br>
 				<center><input type="button" id="btn3" onclick="addfield()" name="tema" value="insertar parrafo" class="btn-tema"></center><br>
 				<center><input type="button" id="btn4" onclick="addtitulo()" name="titulobtn" value="insertar titulo" class="btn-tema"></center><br>

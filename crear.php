@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['usuario'])){
-		header("location:temas_integrales.php");
+		header("location:index.php");
 	}
 	require ('conexion.php');
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
