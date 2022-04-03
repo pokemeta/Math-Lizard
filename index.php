@@ -30,7 +30,7 @@
 					<ul>
 						<li><a href="#">tema 1</a></li>
 						<li><a href="#">tema 2</a></li>
-						<li><a href="config.php"><?php echo $_SESSION['usuario']; ?>&nbsp;<img class="pfp"src="pfps/<?php echo $rs['perfil']; ?>"></a></li>
+						<li><a href="config.php">usuario cualquiera&nbsp;<img class="pfp"src="pfps/lizard-icon-simple-style-vector-9672733.jpg"></a></li>
 						<li><a href="login.php">iniciar sesion</a></li>
 					</ul>
 				</nav>
