@@ -3,28 +3,40 @@
 <?php 
 session_start();
 require ('conexion.php');
-	$num = $_GET['id'];
-	if(empty($num) or $num <= 0){
-		header("location:index.php");
-	}
-	else{
-		$stmt = $conexion->prepare("SELECT * FROM integrales WHERE id = $num");
-		$stmt2 = $conexion->prepare("SELECT * FROM cuentas WHERE nombre = :nom");
-		$stmt->execute();
-		if(!empty($_SESSION['usuario'])){
-			$stmt2->execute(array(':nom' => $_SESSION['usuario']));
-		}
-		else{}
-		$titulo = $stmt->fetch();
-		$rs = $stmt2->fetch();
-	}
- ?>
+?>
 <html>
 	<head>
-		<?php require('titulo.php'); ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>math lizard</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	</head>
 	<body>
-		<?php require('cabecera.php'); ?>
+		<header>
+			<div class="logo">Math Lizard</div>
+			<div class="active"></div>
+				<nav>
+					<ul>
+						<li><a href="#">tema 1</a></li>
+						<li><a href="#">tema 2</a></li>
+						<li><a href="config.php"><?php echo $_SESSION['usuario']; ?>&nbsp;<img class="pfp"src="pfps/<?php echo $rs['perfil']; ?>"></a></li>
+						<li><a href="login.php">iniciar sesion</a></li>
+					</ul>
+				</nav>
+			<div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+		</header>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menu-toggle').click(function(){
+				$('nav').toggleClass('active')
+			})
+		})
+	</script>
+
     <div class="container">
       <div class="form">
         <h1>formularios</h1>
@@ -33,9 +45,17 @@ require ('conexion.php');
 		<a href="#"><p class="link">formula 3</p></a><br>
       </div>
       <div class="post">
-        <h1><?php echo $titulo['titulo']; ?></h1>
+        <h1>lorem ipsum</h1>
         <hr>
-        <?php echo $titulo['contenido']; ?>
+        <p class="texto-siz">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec tortor mi. Vivamus ullamcorper diam vel ligula bibendum,
+		vel blandit augue commodo. Pellentesque a commodo velit. Morbi ipsum ante, ornare sed nisi sit amet, tincidunt mattis dolor. Mauris elit leo,
+		ullamcorper et eros ac, suscipit ornare tortor. Aenean congue urna eget enim ultrices sodales. Nulla orci erat, pulvinar et neque non, vestibulum condimentum turpis.
+		Vivamus ut tincidunt nibh. Nulla efficitur porttitor tortor at aliquet. Morbi varius lorem eros, eu malesuada nisl faucibus eu.
+		<br><br>
+		Aliquam lacinia fermentum est scelerisque dignissim. Integer luctus, arcu non luctus scelerisque, elit nisi blandit augue, et vestibulum tellus
+		ligula pharetra nulla. Duis cursus libero libero, ut convallis augue luctus id. Integer ut consequat magna. Nam venenatis maximus odio, sed ornare ipsum. Curabitur
+		a molestie magna. Suspendisse aliquet vel lacus eget scelerisque. Integer augue ipsum, eleifend non ex cursus, varius auctor velit. Ut et nisl vitae nibh malesuada
+		ullamcorper vitae a lacus. Fusce sodales finibus lorem sit amet feugiat.</p>
       </div>
     </div>
 	</body>

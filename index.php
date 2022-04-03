@@ -14,33 +14,51 @@
 ?>
 <html>
 	<head>
-		<?php require('titulo.php'); ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>math lizard</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	</head>
 	<body>
-		<meta charset="UTF-8"/>
-	<?php require('cabecera.php'); ?>
-    <div class="container-temas">
+		<header>
+			<div class="logo">Math Lizard</div>
+			<div class="active"></div>
+				<nav>
+					<ul>
+						<li><a href="#">tema 1</a></li>
+						<li><a href="#">tema 2</a></li>
+						<li><a href="config.php"><?php echo $_SESSION['usuario']; ?>&nbsp;<img class="pfp"src="pfps/<?php echo $rs['perfil']; ?>"></a></li>
+						<li><a href="login.php">iniciar sesion</a></li>
+					</ul>
+				</nav>
+			<div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+		</header>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menu-toggle').click(function(){
+				$('nav').toggleClass('active')
+			})
+		})
+	</script>
 
-	<?php while($titulo = $stmt->fetch()): ?>
-	<div class="tema">
-		<meta charset="UTF-8"/>
-		<img src="banners/<?php echo $titulo['banner']; ?>" class="thumbnail">
-		<h1 class="titulo-tema"><?php echo $titulo['titulo']; ?></h1>
-		<hr>
-		<p class="descripcion-breve"><?php echo $titulo['descripcion']; ?></p>
-		<div class="boton-tema"><a href="contenido.php?<?php echo 'id=' . $titulo['id']; ?>">Entrar</a></div>
-	</div>
-	<?php endwhile; ?>
 
-	<?php if(!empty($_SESSION['usuario'])): ?>
-		<?php if($rs['rol'] == "admin"): ?>
-		<div class="icon-plus">
-			<div class="ico">
-				<a href="insertar_integ.php"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+		<div class="container-temas">
+			<div class="tema">
+				<img src="banners/variable.png" class="thumbnail">
+				<h1 class="titulo-tema">lorem ipsum</h1>
+				<hr>
+				<p class="descripcion-breve">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<div class="boton-tema"><a href="contenido.php">Entrar</a></div>
+			</div>
+			<div class="icon-plus">
+				<div class="ico">
+					<a href="insertar_integ.php"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+				</div>
 			</div>
 		</div>
-		<?php endif; ?>
-	<?php endif; ?>
-    </div>
 	</body>
 </html>

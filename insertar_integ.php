@@ -3,13 +3,6 @@
 <?php
 	session_start();
 	require('conexion.php');
-	$adrol = $conexion->prepare("SELECT * FROM cuentas WHERE nombre = :nom");
-	$adrol->execute(array(':nom' => $_SESSION['usuario']));
-	$res = $adrol->fetch();
-	if($res['rol'] == 'normal' or empty($_SESSION['usuario'])){
-		header("location:index.php");
-	}
-	else{}
 ?>
 <html>
 	<head>
